@@ -21,3 +21,18 @@ h1 {
 .w-100 {
   width: 100%;
 }
+
+.my-md {
+  margin: 20px 0;
+}
+
+input {
+  line-height: 24px;
+  width: 320px;
+  padding-left: 8px;
+}
+
+button {
+  line-height: 24px;
+  display: inline-block;
+}
