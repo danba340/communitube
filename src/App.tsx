@@ -7,7 +7,7 @@ const params = new URLSearchParams(window.location.search);
 const url = "https://www.youtube.com/embed/" + params.get("v");
 const sessionId = params.get("s");
 const socket = useSocket(
-  "https://communitube.herokuapp.com?sessionId=" + sessionId
+  "http://communitube.herokuapp.com?sessionId=" + sessionId
 );
 
 const App: React.FC = () => {
