@@ -1,0 +1,23 @@
+/* ==========================================================================
+  Our styles 
+   ========================================================================== */
+
+body {
+  background: #222;
+  color: #d25656;
+  font-family: Lato;
+}
+
+h1 {
+  letter-spacing: 2px;
+  margin: 1.5em 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.w-100 {
+  width: 100%;
+}

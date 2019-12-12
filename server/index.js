@@ -1,23 +1,20 @@
 var http = require("http").createServer();
 var io = require("socket.io")(http);
 
+const roomCounts = {};
+
 io.on("connection", function(socket) {
-  console.log("a user connected");
-  socket.on("disconnect", function() {
-    console.log("user disconnected");
-  });
+  socket.join(socket.handshake.query.sessionId);
 
   socket.on("paused", function(msg) {
-    console.log("paused", msg);
-    io.emit("paused", msg);
+    io.sockets.in(socket.handshake.query.sessionId).emit("paused", msg);
   });
 
   socket.on("playing", function(msg) {
-    console.log("playing", msg);
-    io.emit("playing", msg);
+    io.sockets.in(socket.handshake.query.sessionId).emit("playing", msg);
   });
 });
 
-http.listen(3000, function() {
-  console.log("listening on *:3000");
+http.listen(3001, function() {
+  console.log("listening on *:3001");
 });
