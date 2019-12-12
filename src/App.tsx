@@ -6,7 +6,9 @@ import "./App.css";
 const params = new URLSearchParams(window.location.search);
 const url = "https://www.youtube.com/embed/" + params.get("v");
 const sessionId = params.get("s");
-const socket = useSocket("http://localhost:3001?sessionId=" + sessionId);
+const socket = useSocket(
+  "https://communitube.herokuapp.com:3001?sessionId=" + sessionId
+);
 
 const App: React.FC = () => {
   const player: any = useRef();
